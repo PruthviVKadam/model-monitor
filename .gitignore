@@ -1,0 +1,21 @@
+# Manual steps stay LOCAL — never commit (deploy specifics, account notes)
+ManualSteps.md
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Generated drift reports / run logs
+reports/*.html
+runs/
+
+# Secrets
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
