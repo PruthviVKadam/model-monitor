@@ -1,6 +1,11 @@
 # Serve the Streamlit dashboard on Hugging Face Spaces (Docker SDK). Python 3.12 for broad wheels.
 FROM python:3.12-slim
 
+# libgomp1 = XGBoost's OpenMP runtime (booster.predict needs it; absent from python:slim).
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 COPY requirements.txt .
