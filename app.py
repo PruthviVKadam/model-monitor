@@ -8,9 +8,11 @@ import streamlit as st
 import drift
 import perf
 from score import score
+from brand import apply_brand
 from stream import FEATURES, make_stream
 
 st.set_page_config(page_title="Model Monitor", page_icon="📡", layout="wide")
+apply_brand()
 
 
 @st.cache_resource(show_spinner="Building stream + scoring batches…")
